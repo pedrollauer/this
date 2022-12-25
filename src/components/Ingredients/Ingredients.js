@@ -1,0 +1,16 @@
+import Fragement from 'react';
+
+const Ingredients=(props)=>{
+		return(
+		<Fragment>
+			<h6>Ingredients</h6>
+			props.ingredients.map((ingredient,i)=>{
+					return(
+						<span>|<br></span>
+						<span key={i}>|<br>--->{ingredient}<span>
+					);
+				})
+		</Fragment>
+		);
+	}
+export default Ingredients;

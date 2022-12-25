@@ -1,0 +1,33 @@
+import {Fragment} from 'react'
+import {ThemeProvider} from 'styled-components'
+import {dark,ligh} from '../../themes/default'
+import {motion} from 'framer-motion'
+import {createGlobalStyle} from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+	body{
+		background-color:black;
+	}
+`
+
+const transitions  ={
+	in:{
+		opacity:1,
+		y:0,
+	},
+	out:{
+		opacity:0,
+		y:"-100%",
+	}
+}
+const Box= ({children})=>{
+	return(
+		<div>
+		<ThemeProvider theme={theme1}>
+		<GlobalStyle/>
+		<Fragment>{children}</Fragment>
+		</ThemeProvider>
+		</div>
+	);
+}
+export default Box;
