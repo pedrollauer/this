@@ -1,5 +1,5 @@
 import Title from './components/NameBox/NameBox'
-import BgAnimation from './components/BackgrooundAnimation/BackgroundAnimation'
+import About from './components/About/About'
 import Header from './components/Header/Header'
 import { Layout } from "./layout/Layout";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
@@ -45,8 +45,7 @@ const Page = ()=>{
 		<BrowserRouter>
 
      <Header currentLang={lang} data={state} setLang={switchLanguage}/>
-     <BgAnimation /> 
-		<Title/>
+     <About/> 
 		<AnimatePresence exitBeforeEnter >
 		<Routes>
 
