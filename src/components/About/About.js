@@ -1,9 +1,10 @@
-import {Bio, Profile, Frame, Picture} from './AboutStyles' 
+import {Bio, Profile, Frame, Picture,CallAction} from './AboutStyles' 
 
 const About = ()=>{
     const mainTitle = "Hi, I'm Peter Lauer!"
     const profession = "Fullstack developer"
     const presentation = "Highlevel experience in web design and  development, producing quality work"
+    const callToAction = 'Check out my projects'
     return( 
         <Frame>
             <Bio>
@@ -11,14 +12,15 @@ const About = ()=>{
             <h3>{profession}</h3>
             {presentation}
             <br/>
-            <button>Contato</button>
+            <CallAction>{callToAction}</CallAction>
             </Bio>
-            <Profile>
 
+            <Profile>
                 <Picture>
                 <img src="/images/me.png" />
 	            </Picture>
             </Profile>
+
         </Frame> 
     )
 }

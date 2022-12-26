@@ -50,6 +50,11 @@ border-style:none;
 `
 
 export const Container = styled.div`
+@media ${props=>props.theme.breakpoints.sm}{
+  width:100vw;
+  overflow:hidden;
+
+  }
 `;
 export const Span=styled.span`
 		font-size:2rem;

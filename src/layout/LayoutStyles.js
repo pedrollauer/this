@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 max-width: 1280px;
-width: 60%;
+width: 70%;
 margin:auto;
+min-width:600px;
 @media ${props=>props.theme.breakpoints.sm}{
-width:100%;
+width:fit-content;
+min-width: 0px;
+overflow:hidden;
 height:1000px;
-margin:0;
-min-width:500px;
+margin:0px;
+padding:0px;
 }
 `;

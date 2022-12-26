@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Text = styled.div`
+color:${props=>props.theme.colors.textColor};
+text-align: justify;
+`
 export const Picture = styled.div`
 position:relative;
 width:100%;

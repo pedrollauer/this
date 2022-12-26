@@ -18,11 +18,9 @@ export const Layout = (props) => {
 	}
 
   return (
-	  <Fragment>
     <Container>
      <motion.div variants={animations} animate="out" initial="out" transition="interpolation">{props.children}</motion.div> 
      <Footer/>
     </Container>
-	  </Fragment>
   )
 }

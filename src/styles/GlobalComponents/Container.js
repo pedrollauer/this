@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
         src: url(${Mine}) format('truetype');
 }
 	body{
+		margin: 0px;
+		padding:0px;
+		width:100vw;
+		overflow-x: hidden;
 		background-color:${(props)=>props.theme.colors.bg}
 			
 	}

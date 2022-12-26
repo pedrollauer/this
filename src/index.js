@@ -45,7 +45,6 @@ const Page = ()=>{
 		<BrowserRouter>
 
      <Header currentLang={lang} data={state} setLang={switchLanguage}/>
-     <About/> 
 		<AnimatePresence exitBeforeEnter >
 		<Routes>
 
