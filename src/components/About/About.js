@@ -15,8 +15,9 @@ const About = ()=>{
             </Bio>
             <Profile>
 
-                <Picture><img   src="/images/me.jpg" />
-	</Picture>
+                <Picture>
+                <img src="/images/me.png" />
+	            </Picture>
             </Profile>
         </Frame> 
     )

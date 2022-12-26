@@ -18,6 +18,7 @@ export const light={
     accent1: "hsl(34.9,98.6%,72.9%)",
     button: "hsl(205.1,100%,36.1%)",
     background2: "hsl(232.7,27.3%,23.7%)",
+    secondBg:"#1e81b0",
   },
   // Breakpoints for responsive design
   breakpoints: {
@@ -40,6 +41,7 @@ export const dark={
     linkColor:"orange",
     accent1: "hsl(34.9,98.6%,72.9%)",
     button: "hsl(205.1,100%,36.1%)",
+    secondBg:"orange",
 
   },
   // Breakpoints for responsive design
