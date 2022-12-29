@@ -75,13 +75,13 @@ const Details=(props)=>{
 
 		{features.features.map((feature,i)=>{
 			return(
-			<Section>
-			<FeatureCard key={i}>
-			<Description>
+			<Section key={i}>
+			<FeatureCard key={i+100}>
+			<Description key={i+1000}>
 				<h2>{feature.title}<br/></h2>
 				<h5>{feature.description}</h5>
 			</Description>
-			<FeatureImage key={i} style={{objectFit:'cover'}} src={feature.image}/>
+			<FeatureImage key={i+10000} style={{objectFit:'cover'}} src={feature.image}/>
 			</FeatureCard>
 			</Section>);})}
 

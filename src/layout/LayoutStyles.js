@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 max-width: 1280px;
-width: 70%;
+width: 80%;
 margin:auto;
 min-width:600px;
 @media ${props=>props.theme.breakpoints.sm}{

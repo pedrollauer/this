@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Menu = styled.div`
+margin-top:50px;
 box-sizing:border-box;
 display:flex;
 width:100%;
 height:70px;
-padding:20px;
+padding-top:20px;
 background-color:orange;
-
 `
 export const Return=styled.div`
 width:70px;
@@ -32,7 +32,7 @@ height:400px;
 display:flex;
 overflow:hidden;
 margin-auto;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+box-shadow: 0px 0px 5px rgba(80, 78, 78, 0.5);
 @media ${(props) => props.theme.breakpoints.sm}{
 display:block;
 }
@@ -69,8 +69,9 @@ z-index:2;
 export const FeatureCard = styled.div`
 width:100%;
 height:500px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+box-shadow: 0px 0px 5px rgba(80, 78, 78, 0.5);
 display:flex;
+background-color: ${props=>props.theme.colors.notSoMuch};
 @media ${(props) => props.theme.breakpoints.sm}{
 display:block;
 }

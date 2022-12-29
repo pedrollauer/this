@@ -1,6 +1,7 @@
 import React, {useContext, useState,Fragment} from 'react';
 import { DiCssdeck} from 'react-icons/di';
 import {HiClipboardList} from 'react-icons/hi'
+import {AiFillInfoCircle} from 'react-icons/ai'
 import {FaLanguage} from 'react-icons/fa'
 import {BsStackOverflow,BsSunFill,BsMoonFill} from 'react-icons/bs'
 import {dark,light} from '../../themes/default'
@@ -30,6 +31,9 @@ const Header = (props) =>  {
 
 			</ConfigMenu>
 		<li><NavLink to='/'><b><h2 style={{fontFamily:'Minecraft'}}>Pedro Lauer</h2></b></NavLink></li>
+		<li>
+				<NavLink to="/"><AiFillInfoCircle/>About Me</NavLink>
+		</li>
 		<li>
 				<NavLink to="/projects"><HiClipboardList/>{props.data.title_1}</NavLink>
 		</li>

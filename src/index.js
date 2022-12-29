@@ -16,16 +16,18 @@ import Box from './styles/GlobalComponents/Container'
 
 const Page = ()=>{
 
-	let [state,setState]=useState({projects:[]});
-	let [lang,setLang]=useState(1);
+	let [state,setState] = useState({projects:[]});
+	let [lang,setLang] = useState(1);
+	let [page, setPage] = useState(1);
+
 	useEffect(async ()=>{
-		document.title='Pedro Lauer';
+	document.title='Pedro Lauer';
 	try{
 		console.log(lang);
 	const result = await fetch('http://localhost:3000/this',{
 	method:'POST',	
 	headers:{"Content-Type":"application/json"},
-	body:JSON.stringify({lang:lang})
+	body:JSON.stringify({lang:lang, page:page})
 	})
 	const data = await result.json();
 		console.log(data);
@@ -35,6 +37,11 @@ const Page = ()=>{
 			console.log(e);
 	}	
 	},[lang]);
+
+	const browse = (destination) =>{
+		setPage(destination)
+	}
+
 	const switchLanguage = ()=>{
 		setLang(lang===1?2:1);
 		console.log(lang)
@@ -48,11 +55,11 @@ const Page = ()=>{
 		<AnimatePresence exitBeforeEnter >
 		<Routes>
 
-		<Route path="/" element={<Home data={state}/>}/>	
-		<Route path="projects" element={<Projects data={state}/>}/>
+		<Route path="/" element={<Home browse={browse} data={state}/>}/>	
+		<Route path="projects" element={<Projects browse={browse} data={state}/>}/>
 		<Route path="tech" element={<Technologies data={state}/>}/>
 		<Route path="languages" element={<Langs data={state}/>}/>
-		<Route path="details" component={<Details/>} element={<Details/>}/>
+		<Route path="details" component={<Details browse={browse} />} element={<Details/>}/>
 		<Route path="test" element={<Projs/>}/>
 
 		</Routes>

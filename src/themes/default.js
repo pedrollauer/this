@@ -9,6 +9,7 @@ export const light={
   colors: {
     opacity:0.8,
     bg:"white",
+    notSoMuch:"#fafafa",
     buttonColor:"#0099ff",
     textColor:"#000000",
     titleColor:"black",
@@ -35,6 +36,7 @@ export const dark={
   colors: {
     opacity:1,
     bg:"#272727",
+    notSoMuch:"#2c2a2a",
     buttonColor:"#ffc400",
     textColor:"#fff",
     titleColor:"rgb(255,255,255,0.75)",
