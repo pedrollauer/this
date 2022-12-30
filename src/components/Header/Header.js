@@ -10,9 +10,6 @@ import {DD,DDButton,Switch,ConfigMenu,NavLink, Container,Menu, SocialIcons } fro
 import {ThemeContext} from 'styled-components';
 
 const Header = (props) =>  {
-		console.log('Hey---->');
-
-		console.log(props.data);
 		const activeTheme = useContext(ThemeContext);
 		const setTheme = useContext(ThemeUpdateContext);
 		const EN = () =>{ return <Fragment><img   style={{margin:"0px 5px 0px"}} src="/images/langs/us.png" height="20px" width="30px"/>EN</Fragment>} 
@@ -32,16 +29,13 @@ const Header = (props) =>  {
 			</ConfigMenu>
 		<li><NavLink to='/'><b><h2 style={{fontFamily:'Minecraft'}}>Pedro Lauer</h2></b></NavLink></li>
 		<li>
-				<NavLink to="/"><AiFillInfoCircle/>About Me</NavLink>
+				<NavLink to="/"><AiFillInfoCircle/>{props.data.title_1}</NavLink>
 		</li>
 		<li>
-				<NavLink to="/projects"><HiClipboardList/>{props.data.title_1}</NavLink>
+				<NavLink to="/projects"><HiClipboardList/>{props.data.title_2}</NavLink>
 		</li>
 		<li>
-				<NavLink to="/tech"><BsStackOverflow/> {props.data.title_2}</NavLink>
-		</li>
-		<li>
-				<NavLink to="/languages"><FaLanguage/> {props.data.title_3}</NavLink>
+				<NavLink to="/tech"><BsStackOverflow/> {props.data.title_3}</NavLink>
 		</li>
 		
 		</Menu>

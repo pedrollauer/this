@@ -1,5 +1,5 @@
 import {NavLink} from './ProjectsStyles'
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Transition from '../../Transition'
 import {Link} from 'react-router-dom'
 import {BlogCard, CardInfo,GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
@@ -10,30 +10,39 @@ const Projects = (props) => {
 
 	const summary = "Aqui estão alguns projetos em que trabalhei enquanto estava aprendendo novas tecnologias."	
 
-	useEffect(async ()=>{
-		document.title='Pedro Lauer';
-		try{
-		const result = await fetch('http://localhost:3000/this',{
-		method:'POST',	
-		headers:{"Content-Type":"application/json"},
-		body:JSON.stringify({lang:1, page:1})
-		})
-		const data = await result.json();
-			console.log(data);
-		console.log(data);
+	let [text, setText] = useState({projects:[]})
+	useEffect(()=>{
 	
-		}catch(e){
-				console.log(e);
-		}	
-		},[]);
+		const fetchData = async()=>{
+			try{
+				const result = await fetch('http://localhost:3000/this',{
+				method:'POST',	
+				headers:{"Content-Type":"application/json"},
+				body:JSON.stringify({lang: props.lang, page: 2})
+			})
+			
+			let data = await result.json();
+			console.log(data)
+			if(data === null){ data ={} }	
+			setText(data)
+	
+			}catch(e){
+				return null;
+			}
+		}
+	
+		fetchData()
+	
+	
+		},[props.lang])
+
 	return (
 		<Transition>
 		<Section nopadding id="projects">
-		<SectionTitle main>{props.data.title_1}</SectionTitle>
-		<SectionText >{props.data.sub_1}</SectionText>
-		<p>{summary}</p>
+		<SectionTitle main>{text.title_1}</SectionTitle>
+		<SectionText >{text.sub_1}</SectionText>
 		<GridContainer>
-		{props.data.projects.map((project,i)=>{return(<BlogCard key={'card_'+i}>
+		{text.projects.map((project,i)=>{return(<BlogCard key={'card_'+i}>
 				<Img src={project.image}/>
 				<TitleContent>
 				<HeaderThree>{project.title}
@@ -47,7 +56,7 @@ const Projects = (props) => {
 			
 				</div>
 				<UtilityList>
-				<NavLink to='/details' state={{projs:i}} >Details</NavLink>
+				<NavLink to='/details' state={{projs:project.proj_id}} >Details</NavLink>
 				<NavLink to="/">Source</NavLink>
 				</UtilityList>
 				</BlogCard>)})}

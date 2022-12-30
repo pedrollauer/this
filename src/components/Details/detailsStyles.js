@@ -7,7 +7,7 @@ display:flex;
 width:100%;
 height:70px;
 padding-top:20px;
-background-color:orange;
+background-color:${props => props.theme.colors.secondBg};
 `
 export const Return=styled.div`
 width:70px;
