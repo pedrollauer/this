@@ -1,6 +1,6 @@
 import About from '../About/About';
 import React,{Fragment, useEffect, useState} from 'react';
-import {SectionTitle } from '../../styles/GlobalComponents';
+import {SectionTitle, SectionText } from '../../styles/GlobalComponents';
 import {Text} from './HomeStyles';
 import Transition from '../../Transition'
 
@@ -36,8 +36,8 @@ return(
 	<Fragment>
 <Transition>
 	<About text={text}/>
-<div style={{display:'block'}}>		
-	<div style={{width:"100%"}}>	<SectionTitle>{text.title}<br/></SectionTitle> </div>
+
+	<SectionTitle>{text.title}<br/></SectionTitle>
 	  <Text>
 		 <p>{text.paragraph_1}</p>
 		 <p>{text.paragraph_2}</p>
@@ -45,7 +45,6 @@ return(
 	  </Text>
 
 
-</div>
 
 	</Transition>
 	</Fragment>

@@ -1,8 +1,9 @@
+import endpoint from '../../db'
 import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router-dom'
 import { Fragment, useEffect, useState} from 'react';
-import {Section,SectionDivider} from '../../styles/GlobalComponents'
-import {Menu,VideoContainer,Description,Video,FeatureCard,FeatureImage, Return} from './detailsStyles';
+import {SectionDivider} from '../../styles/GlobalComponents'
+import {Section, Menu,VideoContainer,Description,Video,FeatureCard,FeatureImage, Return} from './detailsStyles';
 import Ingredients from '../Ingredients/Ingredients'
 import {Title} from './detailsStyles'
 import '../../style.css'
@@ -38,7 +39,7 @@ const Details=(props)=>{
 		console.log(projs)
 		const fetchData = async()=>{
 			try{
-				const result = await fetch('http://localhost:3000/this',{
+				const result = await fetch(endpoint+'/this',{
 				method:'POST',	
 				headers:{"Content-Type":"application/json"},
 				body:JSON.stringify({lang: props.lang, page: 3, proj_id: projs})
@@ -59,18 +60,17 @@ const Details=(props)=>{
 
 	return(
 <Fragment>
-
-
 		<Section>
-		<Menu>		<Return><Link to="/"><AiOutlineLeft/></Link></Return>
+		<Menu>		
 		<Title>
-		{text.name}
+		<Return><Link to="/"><AiOutlineLeft/></Link></Return>
+			{text.name}	
 		</Title>
-		<h6>{text.description}</h6>
 		</Menu>
+
 		<VideoContainer>
 		<Video>
-		<iframe width="500" height="315" src={text.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="100%" height="315" src={text.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</Video>	
 		</VideoContainer>
 

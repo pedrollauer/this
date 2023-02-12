@@ -8,5 +8,8 @@ left:0;
 bottom:0;
 margin:auto;
 color:${props=>props.theme.colors.textColor};
+@media ${(props) => props.theme.breakpoints.sm}{
+    padding:100px 50px;
+}
 `
 

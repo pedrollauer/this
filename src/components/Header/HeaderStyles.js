@@ -6,6 +6,13 @@ position:absolute;
 top:0px;
 right:30px;
 display:flex;
+
+@media ${props=>props.theme.breakpoints.sm}{
+position:relative;
+display:flex;
+order:2;
+margin-left:25px;
+}
 `;
 
 export const DD = styled.div`
@@ -76,20 +83,28 @@ background-color:${props=>props.theme.colors.textColor};
 opacity:${props=>props.theme.colors.opacity};
 color:${props=>props.theme.colors.bg};
 li{
-	padding:0 20px 0;
+	padding:0px 20px 0px;
 }
 @media ${props=>props.theme.breakpoints.sm}{
-display:block;
+display:flex;
+flex-direction: column;
 overflow:hidden;
-padding-top:2px;
+align-items:start;
 text-align:left;
-height:70px;
+height:50px;
+margin-left:0px;
+margin-bottom:10px;
 
+li{
+  padding: 0px;
+  margin-bottom: 10px;
+}
 &:hover{
 height:auto;
 }
 }
 `;
+
 export const Div3 = styled.div`
   background-color:red;
   margin-top:70px;
@@ -120,12 +135,15 @@ export const NavLink = styled(Link)`
 text-decoration:none;
 font-size:20px;
 transition: all 1s;
-color:red;
+color:${props => props.theme.colors.secondBg};
 &:visited{
 color:${props=>props.theme.colors.bg};
 
 text-decoration:none;
-}
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 15px;
+  }
+
 &:hover{
 font-size:24px;
 text-decoration:underline;

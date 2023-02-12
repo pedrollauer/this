@@ -21,13 +21,12 @@ const Header = (props) =>  {
 		<Menu>
 
 		<ConfigMenu>	
-			<DDButton onClick={props.setLang}>{props.currentLang===1?<EN/>:<BR/>}</DDButton>
-			<DD><DDButton onClick={props.setLang}> {props.currentLang===2?<EN/>:<BR/>}</DDButton></DD>
-				<Switch value="Dark" onClick={()=>{setTheme(activeTheme===dark?light:dark)}}>{activeTheme==dark?<BsSunFill/>:<BsMoonFill/>}</Switch>
+			<DDButton onClick={props.setLang}>{props.currentLang===1?<BR/>:<EN/>}</DDButton>
+			<DD><DDButton onClick={props.setLang}> {props.currentLang===2?<BR/>:<EN/>}</DDButton></DD>
+			<Switch value="Dark" onClick={()=>{setTheme(activeTheme===dark?light:dark)}}>{activeTheme==dark?<BsSunFill/>:<BsMoonFill/>}</Switch>
+		</ConfigMenu>
 
-
-			</ConfigMenu>
-		<li><NavLink to='/'><b><h2 style={{fontFamily:'Minecraft'}}>Pedro Lauer</h2></b></NavLink></li>
+		<li><NavLink to='/'><b><div style={{padding:"12px 0px 12px 0px",fontSize: "26px", fontFamily:'Minecraft'}}>Pedro Lauer</div></b></NavLink></li>
 		<li>
 				<NavLink to="/"><AiFillInfoCircle/>{props.data.title_1}</NavLink>
 		</li>

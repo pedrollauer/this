@@ -6,7 +6,7 @@ const About = (props)=>{
             <Bio>
             <h1>{props.text.hello}</h1>
             <h3>{props.text.profession}</h3>
-            {props.text.description}
+            <h5>{props.text.description}</h5>
             <br/>
             <CallAction>{props.text.button}</CallAction>
             </Bio>

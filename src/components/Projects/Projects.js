@@ -1,3 +1,4 @@
+import endpoint from '../../db'
 import {NavLink} from './ProjectsStyles'
 import React, {useEffect, useState} from 'react';
 import Transition from '../../Transition'
@@ -15,7 +16,7 @@ const Projects = (props) => {
 	
 		const fetchData = async()=>{
 			try{
-				const result = await fetch('http://localhost:3000/this',{
+				const result = await fetch(endpoint+'/this',{
 				method:'POST',	
 				headers:{"Content-Type":"application/json"},
 				body:JSON.stringify({lang: props.lang, page: 2})

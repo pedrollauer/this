@@ -6,11 +6,14 @@ width: 80%;
 margin:auto;
 min-width:600px;
 @media ${props=>props.theme.breakpoints.sm}{
-width:fit-content;
+width: 100vw;
 min-width: 0px;
-overflow:hidden;
-height:1000px;
-margin:0px;
+overflow-x:hidden;
+overflow-y:scroll;
+height: 1000px;
+padding: 0px 20px 0px 40px;
+padding-right:50px;
+box-sizing: border-box;
 padding:0px;
 }
 `;

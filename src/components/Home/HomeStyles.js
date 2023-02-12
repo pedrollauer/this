@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Text = styled.div`
 color:${props=>props.theme.colors.textColor};
 text-align: justify;
+padding: 0px 10px 0px 10px;
 `
 export const Picture = styled.div`
 position:relative;

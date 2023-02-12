@@ -1,3 +1,4 @@
+import endpoint from './db'
 import Header from './components/Header/Header'
 import { Layout } from "./layout/Layout";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
@@ -11,7 +12,6 @@ import {motion,AnimatePresence} from 'framer-motion';
 import Langs from './components/Langs/Langs'
 import Technologies from './components/Technologies/Technologies'
 import Box from './styles/GlobalComponents/Container'
-import { fetchData } from './functions/functions';
 
 const Page = ()=>{
 
@@ -22,7 +22,7 @@ const Page = ()=>{
 	useEffect(()=>{	
 		const fetchData = async ()=>{
 			try{
-				const result = await fetch('http://localhost:3000/this',{
+				const result = await fetch(endpoint+'/this',{
 				method:'POST',	
 				headers:{"Content-Type":"application/json"},
 				body:JSON.stringify({lang:lang, page:0})
