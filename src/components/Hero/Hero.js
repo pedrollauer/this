@@ -2,7 +2,7 @@ import React,{Fragment} from 'react';
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { Picture,LeftSection } from './HeroStyles';
 
-const sectionTitle = 'About Me'
+const sectionTitle = 'About Mee'
 const aboutMe = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a lorem ac ex aliquet finibus. Pellentesque fermentum convallis nunc, a posuere orci pharetra id. Mauris at arcu non turpis venenatis maximus. Fusce a pulvinar velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque lobortis condimentum nisi. Sed volutpat cursus dignissim. Aliquam ut diam enim. Quisque vulputate lacinia nisl, at blandit sapien mattis ac. Proin tortor nunc, tristique ut tellus sed, scelerisque aliquet nunc. Aliquam sit amet dui ut tortor pulvinar faucibus sit amet vitae turpis.
 
 Nunc a molestie felis. Sed vel tempus ex. Nam et elementum metus, eu scelerisque sapien. Aliquam mauris dolor, egestas eget dolor eu, fringilla pulvinar sem. Pellentesque facilisis eleifend quam et elementum. Aenean ultricies augue quam, in scelerisque nunc sagittis id. Donec sagittis ligula sem, a tincidunt quam viverra et. Sed mattis dapibus sem, vel maximus ipsum ornare vel. Maecenas lorem ante, viverra vitae fermentum nec, aliquet eget nulla. Vestibulum tempus cursus pretium.

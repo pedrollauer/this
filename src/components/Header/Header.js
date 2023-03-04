@@ -28,7 +28,7 @@ const Header = (props) =>  {
 
 		<li><NavLink to='/'><b><div style={{padding:"12px 0px 12px 0px",fontSize: "26px", fontFamily:'Minecraft'}}>Pedro Lauer</div></b></NavLink></li>
 		<li>
-				<NavLink to="/"><AiFillInfoCircle/>{props.data.title_1}</NavLink>
+				<NavLink to="/"><AiFillInfoCircle/> {props.data.title_1}</NavLink>
 		</li>
 		<li>
 				<NavLink to="/projects"><HiClipboardList/>{props.data.title_2}</NavLink>

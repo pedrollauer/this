@@ -134,8 +134,9 @@ export const Div4= styled.div`
 export const NavLink = styled(Link)`
 text-decoration:none;
 font-size:20px;
-transition: all 1s;
-color:${props => props.theme.colors.secondBg};
+transition: color 1s;
+color:${props => props.theme.colors.textColor};
+
 &:visited{
 color:${props=>props.theme.colors.bg};
 
@@ -147,6 +148,8 @@ text-decoration:none;
 &:hover{
 font-size:24px;
 text-decoration:underline;
+color: ${props => props.theme.colors.secondBg};
+&
 }
 `;
 

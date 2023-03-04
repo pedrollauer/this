@@ -8,7 +8,7 @@ const Technologies = (props) =>  (
 	<Transition>
 		<Section id="tech">
 
-		<SectionTitle main>{props.data.title_2}</SectionTitle>
+		<SectionTitle main>{props.data.title_3}</SectionTitle>
 		<SectionText>
 		{props.data.sub_2}	
 		<List>
@@ -18,8 +18,7 @@ const Technologies = (props) =>  (
 				<ListTitle>Front-End</ListTitle>
 		</ListContainer>
 		<ListParagraph>
-		Experience with <br/>
-		React.js
+		React.js, HTML, CSS
 		</ListParagraph>
 		</ListItem>
 		<ListItem>
@@ -28,8 +27,7 @@ const Technologies = (props) =>  (
 				<ListTitle>Back-End</ListTitle>
 		</ListContainer>
 		<ListParagraph>
-		Experience with <br/>
-		Node.js
+		Node.js/Java
 		</ListParagraph>
 		</ListItem>
 		<ListItem>
@@ -38,8 +36,7 @@ const Technologies = (props) =>  (
 				<ListTitle>DataBase</ListTitle>
 		</ListContainer>
 		<ListParagraph>
-		Experience with <br/>
-		SQL
+		MySQL
 		</ListParagraph>
 		</ListItem>
 		</List>

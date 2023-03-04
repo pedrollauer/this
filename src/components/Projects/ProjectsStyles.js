@@ -1,18 +1,11 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+
 export const NavLink = styled(Link)`
 text-decoration:none;
 font-size:20px;
-transition: all 1s;
-&:visited{
-color:${props=>props.theme.colors.textColor};
 
 text-decoration:none;
-}
-&:hover{
-font-size:24px;
-text-decoration:underline;
-}
 `;
 export const Img = styled.img`
   width:100%;
@@ -41,9 +34,16 @@ export const BlogCard = styled.div`
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
   width: 400px;
+  color:${props=>props.theme.colors.textColor} ;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }
+   a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      font-weight:400;
+      color: darkcyan;
+ }
+
 `;
 export const TitleContent = styled.div`
   text-align: center;
@@ -99,7 +99,7 @@ export const UtilityList = styled.ul`
   padding: 0;
   display: flex;
   justify-content: space-around;
-  margin: 2.5rem 0;
+  margin: 0 2.5 0 2.5;
 `;
 
 

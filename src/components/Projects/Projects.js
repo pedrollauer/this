@@ -43,7 +43,11 @@ const Projects = (props) => {
 		<SectionTitle main>{text.title_1}</SectionTitle>
 		<SectionText >{text.sub_1}</SectionText>
 		<GridContainer>
-		{text.projects.map((project,i)=>{return(<BlogCard key={'card_'+i}>
+		{text.projects.map((project,i)=>{
+            const url = 'https://github.com/pedrollauer/' +project.title.toLowerCase()
+            const tryURL = 'https://plauer.tech/' + project.title.toLowerCase()
+
+            return(<BlogCard key={'card_'+i}>
 				<Img src={project.image}/>
 				<TitleContent>
 				<HeaderThree>{project.title}
@@ -52,13 +56,14 @@ const Projects = (props) => {
 				</TitleContent>
 				<CardInfo>{project.description}</CardInfo>
 				<div>
-				<TitleContent>Stack</TitleContent>
+				<TitleContent>Techs:</TitleContent>
 			<TagList>{project.stacks.map((stack,i)=>(<Tag key={i}>{stack.stack}</Tag>))}</TagList>
 			
 				</div>
 				<UtilityList>
 				<NavLink to='/details' state={{projs:project.proj_id}} >Details</NavLink>
-				<NavLink to="/">Source</NavLink>
+				<a href={url}>Source</a>
+                <a href={tryURL}>Try</a>
 				</UtilityList>
 				</BlogCard>)})}
 		</GridContainer>

@@ -29,14 +29,30 @@ const transtions={
 		y:"-100%",
 	}
 }
+    const FVideo = (props)=>{
+        if(props.video !=null){
+            return (
+            <Video>
+            <iframe width="100%" height="315" src={props.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </Video>	
+
+            )
+
+        }else{
+            return(
+            <Video>
+                <img style = {{objectFit: 'cover'}} width= "100%" height= "315" src={'./images/'+props.id+'/1.png'}/>
+            </Video>	
+            )
+        }
+    }
+
 const Details=(props)=>{
 
 	const {projs} = useLocation().state;
 	const [text, setText] = useState({features:[], dependencies: [], strings:[{dependencies:""}]})
 	useEffect(()=>{
 	
-		console.log("Refute this!!")
-		console.log(projs)
 		const fetchData = async()=>{
 			try{
 				const result = await fetch(endpoint+'/this',{
@@ -58,20 +74,19 @@ const Details=(props)=>{
 			fetchData()
 	},[props.lang])
 
+
 	return(
 <Fragment>
 		<Section>
 		<Menu>		
 		<Title>
-		<Return><Link to="/"><AiOutlineLeft/></Link></Return>
+		<Return><Link to="/projects"><AiOutlineLeft/></Link></Return>
 			{text.name}	
 		</Title>
 		</Menu>
 
 		<VideoContainer>
-		<Video>
-		<iframe width="100%" height="315" src={text.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</Video>	
+            <FVideo video = {text.video} id = {text.name}/>
 		</VideoContainer>
 
 		</Section>

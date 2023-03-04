@@ -1,4 +1,5 @@
 import {Bio, Profile, Frame, Picture,CallAction} from './AboutStyles' 
+import {Link} from 'react-router-dom'
 
 const About = (props)=>{
     return( 
@@ -8,7 +9,7 @@ const About = (props)=>{
             <h3>{props.text.profession}</h3>
             <h5>{props.text.description}</h5>
             <br/>
-            <CallAction>{props.text.button}</CallAction>
+            <Link to={"/projects"}><CallAction >{props.text.button}</CallAction></Link>
             </Bio>
 
             <Profile>
